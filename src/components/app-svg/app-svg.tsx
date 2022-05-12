@@ -4,7 +4,7 @@ import {AppSvgElement} from "./app-svg-element";
 
 @Component({
   tag: 'app-svg',
-  styleUrl: 'app-svg.scss',
+  styleUrl: 'app-svg.css',
   shadow: true,
 })
 export class AppSvg {

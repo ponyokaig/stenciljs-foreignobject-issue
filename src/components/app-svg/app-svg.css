@@ -13,21 +13,6 @@
   display: block;
 }
 
-
-[data-element-type="svg-text"] {
-
-
-  &.edit-mode {
-    overflow: visible;
-
-    .text-editable-element:focus-visible {
-      outline: 1px solid #006ce5;
-      user-select: text;
-    }
-  }
-}
-
-
 .text-editable-element {
   overflow: hidden;
   word-break: break-word;
@@ -46,9 +31,9 @@
 
 [data-element-type="svg-text"].edit-mode {
   overflow: visible;
+}
 
-  .text-editable-element:focus-visible {
-    outline: 1px solid #006ce5;
-    user-select: text;
-  }
+[data-element-type="svg-text"].edit-mode .text-editable-element:focus-visible {
+  outline: 1px solid #006ce5;
+  user-select: text;
 }
