@@ -3,6 +3,11 @@ export enum AppElementType {
   text = 'svg-text',
 }
 
+export enum AppSvgRender {
+  jsx,
+  text,
+}
+
 export interface AppSvgElementData {
   cmpId?: number;
   type: AppElementType;

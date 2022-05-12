@@ -14,6 +14,7 @@ export namespace Components {
         "margin": number;
         "pageHeight": number;
         "pageWidth": number;
+        "renderAsText": boolean;
     }
 }
 declare global {
@@ -50,6 +51,7 @@ declare namespace LocalJSX {
         "margin"?: number;
         "pageHeight"?: number;
         "pageWidth"?: number;
+        "renderAsText"?: boolean;
     }
     interface IntrinsicElements {
         "app-menu": AppMenu;

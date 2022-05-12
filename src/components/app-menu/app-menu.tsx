@@ -1,6 +1,6 @@
-import {Component, h} from '@stencil/core';
-import {dispatchAppSvgAddItem} from "../app-svg/app-svg-dispatch";
-import {AppElementType} from "../app-svg/app-svg-interface";
+import {Component, h, State} from '@stencil/core';
+import {dispatchAppSvgAddItem, dispatchUseRenderer} from "../app-svg/app-svg-dispatch";
+import {AppElementType, AppSvgRender} from "../app-svg/app-svg-interface";
 
 @Component({
   tag: 'app-menu',
@@ -8,6 +8,8 @@ import {AppElementType} from "../app-svg/app-svg-interface";
   shadow: true,
 })
 export class AppMenu {
+  @State() renderAsText: boolean = false;
+
   private static getRandomInteger(min, max): number {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -36,10 +38,18 @@ export class AppMenu {
     })
   }
 
+  private handleSwitchRender = () => {
+    this.renderAsText = !this.renderAsText;
+    dispatchUseRenderer(this.renderAsText ? AppSvgRender.text : AppSvgRender.jsx);
+  }
+
 
   render() {
     return (
       <div class="side-menu">
+        <button onClick={this.handleSwitchRender}>
+          { this.renderAsText ? "Render: Text" : "Render: JSX" }
+        </button>
         <button onClick={this.handleAddImage}>Add Image</button>
         <button onClick={this.handleAddText}>Add Text</button>
       </div>

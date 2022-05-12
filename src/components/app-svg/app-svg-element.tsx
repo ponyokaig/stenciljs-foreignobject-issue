@@ -24,7 +24,7 @@ const onTextFocus = (ev: FocusEvent): void => {
   selection.addRange(range);
 }
 
-const onBlurFocus = (ev: FocusEvent): void => {
+const onTextBlur = (ev: FocusEvent): void => {
   const foreignObject = (ev.target as HTMLDivElement).parentNode as SVGSVGElement;
 
   foreignObject.classList.remove('edit-mode');
@@ -72,7 +72,7 @@ const createSvgFromObject = (item: AppSvgElementData) => {
           contentEditable='true'
           onKeyDown={onTextKeyDown}
           onFocus={onTextFocus}
-          onBlur={onBlurFocus}
+          onBlur={onTextBlur}
           innerHTML={text}>
         </div>
       </foreignObject>
