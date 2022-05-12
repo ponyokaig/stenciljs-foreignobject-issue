@@ -1,0 +1,54 @@
+
+:host {
+  position: absolute;
+  left: 0;
+  top: 120px;
+  bottom: 0;
+  right: 0;
+  background: #DCDCDCFF;
+  overflow: scroll;
+}
+
+.stage-svg {
+  display: block;
+}
+
+
+[data-element-type="svg-text"] {
+
+
+  &.edit-mode {
+    overflow: visible;
+
+    .text-editable-element:focus-visible {
+      outline: 1px solid #006ce5;
+      user-select: text;
+    }
+  }
+}
+
+
+.text-editable-element {
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: 0;
+  border: none;
+  user-select: none;
+}
+
+[data-element-type="svg-text"].edit-mode {
+  overflow: visible;
+
+  .text-editable-element:focus-visible {
+    outline: 1px solid #006ce5;
+    user-select: text;
+  }
+}
